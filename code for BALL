@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class movement : MonoBehaviour
+{
+
+private Rigidbody rb;
+public int speed;
+// Start is called before the first frame update
+void Start()
+{
+rb = getComponent<Rigidbody>();
+}
+
+// Update is called once per frame
+void Update()
+{
+float Horizontal = Input.getAxis("Horizontal");
+float Horizontal = Input.getAxis("Vertical");
+vector3 movement = new vector3(Horizontal, 0.0f,Vertical);
+rb.AddForce(movement* speed);;
+}
+}
